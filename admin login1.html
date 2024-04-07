@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grant Status</title>
+    <style>
+        .status-description {
+            margin-top: 20px;
+            background-color: #724bd6;
+            padding: 10px;
+            border: 1px solid #181616;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check Grant Status</h2>
+
+    <select id="statusSelector" onchange="updateStatusDescription()">
+        <option value="">--Select a Status--</option>
+        <option value="Under Review">Under Review</option>
+        <option value="Awarded">Awarded</option>
+        <option value="Rejected">Rejected</option>
+    </select>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Grant ID</th>
+                <th>Grant Name</th>
+                <th>Industry</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Smith Community Program</td>
+                <td>Community Arts</td>
+                <td>$25,000</td>
+                <td>Support for innovative tech startups.</td>
+                <td>Under Review</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>National Science Foundation</td>
+                <td>Education & Science</td>
+                <td>$50,000</td>
+                <td>Funding for cutting-edge healthcare research.</td>
+                <td>Awarded</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Tata MNC</td>
+                <td>Technology</td>
+                <td>$100,000</td>
+                <td>Support for innovative tech startups</td>.</td>
+                <td>Awarded</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>AIMS National </td>
+                <td>Medical</td>
+                <td>$200,000</td>
+                <td>funding for medical fields.</td>
+                <td>Under Review</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Tata Trust</td>
+                <td>App Develoment</td>
+                <td>$75,000</td>
+                <td>Funding for App deveopment.</td>
+                <td>Awarded</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Rotary Foundations</td>
+                <td>Community Development Projects</td>
+                <td>$250,000</td>
+                <td>Support for innovative tech startups.</td>
+                <td>Under Review</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Wellcome Trust</td>
+                <td>Education & Science</td>
+                <td>$30,000</td>
+                <td>Support for Educational Institutions And Science Research.</td>
+                <td>Awarded</td>
+            </tr>
+
+            <!-- Add more rows for additional grants as needed -->
+        </tbody>
+    </table>
+
+    <div id="statusDescription" class="status-description">
+        Please select a status to see the details.
+    </div>
+
+
+    <a href="Budget plan -1.html">
+        <button type="button" onclick="authenticate()">Submit</button>
+
+    <script>
+        function updateStatusDescription() {
+            const status = document.getElementById("statusSelector").value;
+            const descriptionEl = document.getElementById("statusDescription");
+
+            let description = "Please select a status to see the details.";
+            switch (status) {
+                case "Under Review":
+                    description = "Your grant is currently under review. We will notify you once the review process is complete.";
+                    break;
+                case "Awarded":
+                    description = "Congratulations! Your grant has been awarded. Further details will be sent to your email.";
+                    break;
+                case "Rejected":
+                    description = "We regret to inform you that your grant has been rejected.";
+                    break;
+            }
+
+            descriptionEl.textContent = description;
+        }
+    </script>
+</body>
+</html>
